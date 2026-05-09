@@ -29,7 +29,8 @@ export async function POST(req: Request) {
       },
       { status: 200 },
     )
-  } catch {
+  } catch (err) {
+    console.error("POST /api/auth/email failed:", err)
     return serverError()
   }
 }
