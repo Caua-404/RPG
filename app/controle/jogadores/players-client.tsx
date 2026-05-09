@@ -27,6 +27,9 @@ export function PlayersClient() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [unlockingId, setUnlockingId] = useState<number | null>(null)
+  const [updatingRoleId, setUpdatingRoleId] = useState<number | null>(null)
+  const [deletingId, setDeletingId] = useState<number | null>(null)
+  const [myId, setMyId] = useState<number | null>(null)
   const [viewMode, setViewMode] = useState<"lista" | "blocos">("lista")
   const [topClasses, setTopClasses] = useState<Array<{ name: string; picks: number }>>([])
   const [, setClockTick] = useState(0)
@@ -92,6 +95,16 @@ export function PlayersClient() {
   }, [])
 
   useEffect(() => {
+    fetch("/api/auth/me", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data: any) => {
+        const id = Number(data?.user?.id)
+        if (Number.isFinite(id)) setMyId(id)
+      })
+      .catch(() => null)
+  }, [])
+
+  useEffect(() => {
     const timer = window.setInterval(() => setClockTick((v) => v + 1), 60_000)
     return () => window.clearInterval(timer)
   }, [])
@@ -113,6 +126,47 @@ export function PlayersClient() {
       setError("Falha de rede ao desbloquear.")
     } finally {
       setUnlockingId(null)
+    }
+  }
+
+  async function handleRoleChange(userId: number, role: "mestre" | "jogador") {
+    setUpdatingRoleId(userId)
+    setError(null)
+    try {
+      const res = await fetch(`/api/users/jogadores/${userId}`, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ role }),
+      })
+      const data = (await res.json()) as { ok?: boolean; error?: string }
+      if (!res.ok) {
+        setError(data.error ?? "Não foi possível alterar cargo.")
+        return
+      }
+      await load()
+    } catch {
+      setError("Falha de rede ao alterar cargo.")
+    } finally {
+      setUpdatingRoleId(null)
+    }
+  }
+
+  async function handleDelete(userId: number) {
+    if (!window.confirm("Tem certeza que deseja deletar este jogador? Essa ação não pode ser desfeita.")) return
+    setDeletingId(userId)
+    setError(null)
+    try {
+      const res = await fetch(`/api/users/jogadores/${userId}`, { method: "DELETE" })
+      const data = (await res.json()) as { ok?: boolean; error?: string }
+      if (!res.ok) {
+        setError(data.error ?? "Não foi possível deletar.")
+        return
+      }
+      await load()
+    } catch {
+      setError("Falha de rede ao deletar.")
+    } finally {
+      setDeletingId(null)
     }
   }
 
@@ -256,18 +310,42 @@ export function PlayersClient() {
                       </span>
                     </td>
                       <td className="px-4 py-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <select
+                          value={p.role}
+                          onChange={(e) => void handleRoleChange(p.id, e.target.value === "mestre" ? "mestre" : "jogador")}
+                          disabled={updatingRoleId === p.id || myId === p.id}
+                          aria-label="Alterar cargo"
+                          className="h-8 rounded-md border border-border bg-background px-2 text-xs disabled:opacity-60"
+                        >
+                          <option value="jogador">Jogador</option>
+                          <option value="mestre">Mestre</option>
+                        </select>
+
                         {p.role === "jogador" && p.blockedAt ? (
                           <button
                             type="button"
-                            className="inline-flex rounded-md border border-border px-2 py-1 text-xs hover:bg-accent disabled:opacity-60"
+                            className="inline-flex h-8 items-center rounded-md border border-border px-2 text-xs hover:bg-accent disabled:opacity-60"
                             onClick={() => void handleUnlock(p.id)}
                             disabled={unlockingId === p.id}
                           >
-                            {unlockingId === p.id ? "Liberando..." : "Liberar acesso"}
+                            {unlockingId === p.id ? "Liberando..." : "Liberar"}
+                          </button>
+                        ) : null}
+
+                        {p.role === "jogador" ? (
+                          <button
+                            type="button"
+                            className="inline-flex h-8 items-center rounded-md border border-border px-2 text-xs text-destructive hover:bg-destructive/10 disabled:opacity-60"
+                            onClick={() => void handleDelete(p.id)}
+                            disabled={deletingId === p.id || myId === p.id}
+                          >
+                            {deletingId === p.id ? "Deletando..." : "Deletar"}
                           </button>
                         ) : (
                           <span className="text-xs text-muted-foreground">-</span>
                         )}
+                      </div>
                       </td>
                   </tr>
                 ))}
