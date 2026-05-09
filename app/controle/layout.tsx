@@ -64,6 +64,7 @@ export default async function ControleLayout({ children }: { children: React.Rea
             <div className="mt-3 grid gap-1">
               <NavLink href="/controle">Sessões</NavLink>
               {session.role === "mestre" ? <NavLink href="/controle/jogadores">Jogadores</NavLink> : null}
+              <NavLink href="/controle/catalogo">Catálogo</NavLink>
               <NavLink href="/controle/perfil">Perfil</NavLink>
             </div>
           </aside>
