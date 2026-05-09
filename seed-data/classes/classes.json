@@ -1,0 +1,134 @@
+[
+  {
+    "id": "class_barbarian",
+    "slug": "barbaro",
+    "name": "Bárbaro",
+    "description": "Guerreiro feroz que canaliza fúria em combate.",
+    "hitDice": "d12",
+    "primaryAbility": ["strength"],
+    "savingThrows": ["strength", "constitution"],
+    "proficiencies": ["light armor", "medium armor", "shields", "simple weapons", "martial weapons"],
+    "features": ["rage", "unarmoredDefense"]
+  },
+  {
+    "id": "class_bard",
+    "slug": "bardo",
+    "name": "Bardo",
+    "description": "Conjurador versátil que inspira aliados.",
+    "hitDice": "d8",
+    "primaryAbility": ["charisma"],
+    "savingThrows": ["dexterity", "charisma"],
+    "proficiencies": ["light armor", "simple weapons", "hand crossbows", "longswords", "rapiers", "shortswords"],
+    "features": ["bardicInspiration", "spellcasting"]
+  },
+  {
+    "id": "class_warlock",
+    "slug": "bruxo",
+    "name": "Bruxo",
+    "description": "Conjurador que recebe poder de um patrono sobrenatural.",
+    "hitDice": "d8",
+    "primaryAbility": ["charisma"],
+    "savingThrows": ["wisdom", "charisma"],
+    "proficiencies": ["light armor", "simple weapons"],
+    "features": ["otherworldlyPatron", "eldritchInvocations"]
+  },
+  {
+    "id": "class_cleric",
+    "slug": "clerigo",
+    "name": "Clérigo",
+    "description": "Canaliza poder divino para cura e proteção.",
+    "hitDice": "d8",
+    "primaryAbility": ["wisdom"],
+    "savingThrows": ["wisdom", "charisma"],
+    "proficiencies": ["light armor", "medium armor", "shields", "simple weapons"],
+    "features": ["divineDomain", "channelDivinity"]
+  },
+  {
+    "id": "class_druid",
+    "slug": "druida",
+    "name": "Druida",
+    "description": "Guardião da natureza e mestre da transformação.",
+    "hitDice": "d8",
+    "primaryAbility": ["wisdom"],
+    "savingThrows": ["intelligence", "wisdom"],
+    "proficiencies": ["light armor", "medium armor", "shields", "clubs", "daggers", "darts", "javelins", "maces", "quarterstaffs", "scimitars", "slings", "spears"],
+    "features": ["druidic", "wildShape"]
+  },
+  {
+    "id": "class_sorcerer",
+    "slug": "feiticeiro",
+    "name": "Feiticeiro",
+    "description": "Conjurador de poder inato e manipulação arcana.",
+    "hitDice": "d6",
+    "primaryAbility": ["charisma"],
+    "savingThrows": ["constitution", "charisma"],
+    "proficiencies": ["daggers", "darts", "slings", "quarterstaffs", "light crossbows"],
+    "features": ["sorcerousOrigin", "fontOfMagic"]
+  },
+  {
+    "id": "class_fighter",
+    "slug": "guerreiro",
+    "name": "Guerreiro",
+    "description": "Especialista em combate marcial e táticas.",
+    "hitDice": "d10",
+    "primaryAbility": ["strength", "dexterity"],
+    "savingThrows": ["strength", "constitution"],
+    "proficiencies": ["all armor", "shields", "simple weapons", "martial weapons"],
+    "features": ["fightingStyle", "secondWind", "actionSurge"]
+  },
+  {
+    "id": "class_rogue",
+    "slug": "ladino",
+    "name": "Ladino",
+    "description": "Especialista em furtividade, precisão e truques.",
+    "hitDice": "d8",
+    "primaryAbility": ["dexterity"],
+    "savingThrows": ["dexterity", "intelligence"],
+    "proficiencies": ["light armor", "simple weapons", "hand crossbows", "longswords", "rapiers", "shortswords"],
+    "features": ["sneakAttack", "thievesCant", "cunningAction"]
+  },
+  {
+    "id": "class_wizard",
+    "slug": "mago",
+    "name": "Mago",
+    "description": "Estudioso da magia arcana com amplo grimório.",
+    "hitDice": "d6",
+    "primaryAbility": ["intelligence"],
+    "savingThrows": ["intelligence", "wisdom"],
+    "proficiencies": ["daggers", "darts", "slings", "quarterstaffs", "light crossbows"],
+    "features": ["arcaneRecovery", "spellcasting"]
+  },
+  {
+    "id": "class_monk",
+    "slug": "monge",
+    "name": "Monge",
+    "description": "Combatente disciplinado que domina corpo e ki.",
+    "hitDice": "d8",
+    "primaryAbility": ["dexterity", "wisdom"],
+    "savingThrows": ["strength", "dexterity"],
+    "proficiencies": ["simple weapons", "shortswords"],
+    "features": ["martialArts", "ki", "unarmoredMovement"]
+  },
+  {
+    "id": "class_paladin",
+    "slug": "paladino",
+    "name": "Paladino",
+    "description": "Guerreiro sagrado de juramentos e smites.",
+    "hitDice": "d10",
+    "primaryAbility": ["strength", "charisma"],
+    "savingThrows": ["wisdom", "charisma"],
+    "proficiencies": ["all armor", "shields", "simple weapons", "martial weapons"],
+    "features": ["divineSense", "layOnHands", "divineSmite"]
+  },
+  {
+    "id": "class_ranger",
+    "slug": "patrulheiro",
+    "name": "Patrulheiro",
+    "description": "Caçador e explorador especializado em terreno selvagem.",
+    "hitDice": "d10",
+    "primaryAbility": ["dexterity", "wisdom"],
+    "savingThrows": ["strength", "dexterity"],
+    "proficiencies": ["light armor", "medium armor", "shields", "simple weapons", "martial weapons"],
+    "features": ["favoredEnemy", "naturalExplorer"]
+  }
+]

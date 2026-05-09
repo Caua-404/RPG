@@ -1,0 +1,83 @@
+[
+  {
+    "id": "subrace_hill_dwarf",
+    "slug": "hill-dwarf",
+    "raceSlug": "anao",
+    "name": "Hill Dwarf",
+    "description": "Anões das colinas são resistentes e obstinados.",
+    "features": ["dwarvenToughness"],
+    "bonuses": [{ "attribute": "wisdom", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_mountain_dwarf",
+    "slug": "mountain-dwarf",
+    "raceSlug": "anao",
+    "name": "Mountain Dwarf",
+    "description": "Anões da montanha são robustos e treinados para guerra.",
+    "features": ["armorTraining"],
+    "bonuses": [{ "attribute": "strength", "bonusValue": 2 }]
+  },
+  {
+    "id": "subrace_high_elf",
+    "slug": "high-elf",
+    "raceSlug": "elfo",
+    "name": "High Elf",
+    "description": "Elfos altos têm afinidade natural com magia arcana.",
+    "features": ["extraCantrip"],
+    "bonuses": [{ "attribute": "intelligence", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_wood_elf",
+    "slug": "wood-elf",
+    "raceSlug": "elfo",
+    "name": "Wood Elf",
+    "description": "Elfos da floresta são velozes e furtivos.",
+    "features": ["fleetOfFoot", "maskOfTheWild"],
+    "bonuses": [{ "attribute": "wisdom", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_drow",
+    "slug": "drow",
+    "raceSlug": "elfo",
+    "name": "Drow",
+    "description": "Elfos negros do subterrâneo, com magia e visão aprimorada.",
+    "features": ["superiorDarkvision", "sunlightSensitivity", "drowMagic"],
+    "bonuses": [{ "attribute": "charisma", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_lightfoot_halfling",
+    "slug": "lightfoot",
+    "raceSlug": "halfling",
+    "name": "Lightfoot Halfling",
+    "description": "Halflings pés-leves são discretos e sociáveis.",
+    "features": ["naturallyStealthy"],
+    "bonuses": [{ "attribute": "charisma", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_stout_halfling",
+    "slug": "stout",
+    "raceSlug": "halfling",
+    "name": "Stout Halfling",
+    "description": "Halflings robustos são mais resistentes a venenos.",
+    "features": ["stoutResilience"],
+    "bonuses": [{ "attribute": "constitution", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_forest_gnome",
+    "slug": "forest-gnome",
+    "raceSlug": "gnomo",
+    "name": "Forest Gnome",
+    "description": "Gnomos da floresta são discretos e talentosos com ilusões.",
+    "features": ["naturalIllusionist", "speakWithSmallBeasts"],
+    "bonuses": [{ "attribute": "dexterity", "bonusValue": 1 }]
+  },
+  {
+    "id": "subrace_rock_gnome",
+    "slug": "rock-gnome",
+    "raceSlug": "gnomo",
+    "name": "Rock Gnome",
+    "description": "Gnomos das rochas são inventores e estudiosos de mecanismos.",
+    "features": ["artificersLore", "tinker"],
+    "bonuses": [{ "attribute": "constitution", "bonusValue": 1 }]
+  }
+]

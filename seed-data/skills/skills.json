@@ -1,0 +1,20 @@
+[
+  { "id": "skill_athletics", "slug": "athletics", "name": "Athletics", "description": "Esforço físico e força bruta.", "relatedAttribute": "strength" },
+  { "id": "skill_acrobatics", "slug": "acrobatics", "name": "Acrobatics", "description": "Equilíbrio e movimentos ágeis.", "relatedAttribute": "dexterity" },
+  { "id": "skill_sleight_of_hand", "slug": "sleight-of-hand", "name": "Sleight of Hand", "description": "Truques manuais e destreza fina.", "relatedAttribute": "dexterity" },
+  { "id": "skill_stealth", "slug": "stealth", "name": "Stealth", "description": "Mover-se sem ser percebido.", "relatedAttribute": "dexterity" },
+  { "id": "skill_arcana", "slug": "arcana", "name": "Arcana", "description": "Conhecimento sobre magia e planos.", "relatedAttribute": "intelligence" },
+  { "id": "skill_history", "slug": "history", "name": "History", "description": "Conhecimento histórico.", "relatedAttribute": "intelligence" },
+  { "id": "skill_investigation", "slug": "investigation", "name": "Investigation", "description": "Análise e dedução detalhada.", "relatedAttribute": "intelligence" },
+  { "id": "skill_nature", "slug": "nature", "name": "Nature", "description": "Conhecimento da natureza.", "relatedAttribute": "intelligence" },
+  { "id": "skill_religion", "slug": "religion", "name": "Religion", "description": "Conhecimento religioso e divino.", "relatedAttribute": "intelligence" },
+  { "id": "skill_animal_handling", "slug": "animal-handling", "name": "Animal Handling", "description": "Lidar com animais.", "relatedAttribute": "wisdom" },
+  { "id": "skill_insight", "slug": "insight", "name": "Insight", "description": "Ler intenções e emoções.", "relatedAttribute": "wisdom" },
+  { "id": "skill_medicine", "slug": "medicine", "name": "Medicine", "description": "Primeiros socorros e diagnósticos.", "relatedAttribute": "wisdom" },
+  { "id": "skill_perception", "slug": "perception", "name": "Perception", "description": "Perceber detalhes ao redor.", "relatedAttribute": "wisdom" },
+  { "id": "skill_survival", "slug": "survival", "name": "Survival", "description": "Sobrevivência em ambiente hostil.", "relatedAttribute": "wisdom" },
+  { "id": "skill_deception", "slug": "deception", "name": "Deception", "description": "Mentir e enganar.", "relatedAttribute": "charisma" },
+  { "id": "skill_intimidation", "slug": "intimidation", "name": "Intimidation", "description": "Amedrontar e pressionar.", "relatedAttribute": "charisma" },
+  { "id": "skill_performance", "slug": "performance", "name": "Performance", "description": "Atuação artística.", "relatedAttribute": "charisma" },
+  { "id": "skill_persuasion", "slug": "persuasion", "name": "Persuasion", "description": "Convencer com diplomacia.", "relatedAttribute": "charisma" }
+]

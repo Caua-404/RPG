@@ -1,0 +1,145 @@
+[
+  {
+    "id": "bg_acolyte",
+    "slug": "acolyte",
+    "name": "Acolyte",
+    "description": "Serviu em templo e desenvolveu fé e disciplina.",
+    "feature": "Shelter of the Faithful",
+    "skillProficiencies": ["insight", "religion"],
+    "toolProficiencies": [],
+    "languagesGranted": 2,
+    "equipmentGranted": ["holy symbol", "prayer book", "incense sticks", "vestments", "common clothes", "pouch (15 gp)"]
+  },
+  {
+    "id": "bg_charlatan",
+    "slug": "charlatan",
+    "name": "Charlatan",
+    "description": "Especialista em fraude e identidade falsa.",
+    "feature": "False Identity",
+    "skillProficiencies": ["deception", "sleight-of-hand"],
+    "toolProficiencies": ["disguise kit", "forgery kit"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["fine clothes", "disguise kit", "tools of the con", "pouch (15 gp)"]
+  },
+  {
+    "id": "bg_criminal",
+    "slug": "criminal",
+    "name": "Criminal",
+    "description": "Tem contatos no submundo e experiência em crimes.",
+    "feature": "Criminal Contact",
+    "skillProficiencies": ["deception", "stealth"],
+    "toolProficiencies": ["thieves' tools", "gaming set"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["crowbar", "dark common clothes", "pouch (15 gp)"]
+  },
+  {
+    "id": "bg_entertainer",
+    "slug": "entertainer",
+    "name": "Entertainer",
+    "description": "Artista de palco com talento para encantar multidões.",
+    "feature": "By Popular Demand",
+    "skillProficiencies": ["acrobatics", "performance"],
+    "toolProficiencies": ["disguise kit", "musical instrument"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["musical instrument", "costume", "favor of an admirer", "pouch (15 gp)"]
+  },
+  {
+    "id": "bg_folk_hero",
+    "slug": "folkHero",
+    "name": "Folk Hero",
+    "description": "Herói local conhecido por feitos entre o povo comum.",
+    "feature": "Rustic Hospitality",
+    "skillProficiencies": ["animal-handling", "survival"],
+    "toolProficiencies": ["artisan's tools", "vehicles (land)"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["artisan's tools", "shovel", "iron pot", "common clothes", "pouch (10 gp)"]
+  },
+  {
+    "id": "bg_guild_artisan",
+    "slug": "guildArtisan",
+    "name": "Guild Artisan",
+    "description": "Artesão treinado e reconhecido por uma guilda.",
+    "feature": "Guild Membership",
+    "skillProficiencies": ["insight", "persuasion"],
+    "toolProficiencies": ["artisan's tools"],
+    "languagesGranted": 1,
+    "equipmentGranted": ["artisan's tools", "letter of introduction", "traveler's clothes", "pouch (15 gp)"]
+  },
+  {
+    "id": "bg_hermit",
+    "slug": "hermit",
+    "name": "Hermit",
+    "description": "Viveu isolado em busca de propósito e conhecimento.",
+    "feature": "Discovery",
+    "skillProficiencies": ["medicine", "religion"],
+    "toolProficiencies": ["herbalism kit"],
+    "languagesGranted": 1,
+    "equipmentGranted": ["scroll case", "winter blanket", "common clothes", "herbalism kit", "pouch (5 gp)"]
+  },
+  {
+    "id": "bg_noble",
+    "slug": "noble",
+    "name": "Noble",
+    "description": "Membro da nobreza com privilégios sociais.",
+    "feature": "Position of Privilege",
+    "skillProficiencies": ["history", "persuasion"],
+    "toolProficiencies": ["gaming set"],
+    "languagesGranted": 1,
+    "equipmentGranted": ["fine clothes", "signet ring", "scroll of pedigree", "pouch (25 gp)"]
+  },
+  {
+    "id": "bg_outlander",
+    "slug": "outlander",
+    "name": "Outlander",
+    "description": "Habitante de fronteiras selvagens e trilhas remotas.",
+    "feature": "Wanderer",
+    "skillProficiencies": ["athletics", "survival"],
+    "toolProficiencies": ["musical instrument"],
+    "languagesGranted": 1,
+    "equipmentGranted": ["staff", "hunting trap", "traveler's clothes", "pouch (10 gp)"]
+  },
+  {
+    "id": "bg_sage",
+    "slug": "sage",
+    "name": "Sage",
+    "description": "Estudioso dedicado a pesquisa e conhecimento.",
+    "feature": "Researcher",
+    "skillProficiencies": ["arcana", "history"],
+    "toolProficiencies": [],
+    "languagesGranted": 2,
+    "equipmentGranted": ["bottle of black ink", "quill", "small knife", "letter from dead colleague", "common clothes", "pouch (10 gp)"]
+  },
+  {
+    "id": "bg_sailor",
+    "slug": "sailor",
+    "name": "Sailor",
+    "description": "Marinheiro experiente em navegação e tempestades.",
+    "feature": "Ship's Passage",
+    "skillProficiencies": ["athletics", "perception"],
+    "toolProficiencies": ["navigator's tools", "vehicles (water)"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["belaying pin", "50ft rope", "lucky charm", "common clothes", "pouch (10 gp)"]
+  },
+  {
+    "id": "bg_soldier",
+    "slug": "soldier",
+    "name": "Soldier",
+    "description": "Treinado para combate e hierarquia militar.",
+    "feature": "Military Rank",
+    "skillProficiencies": ["athletics", "intimidation"],
+    "toolProficiencies": ["gaming set", "vehicles (land)"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["insignia of rank", "trophy from fallen enemy", "bone dice", "common clothes", "pouch (10 gp)"]
+  },
+  {
+    "id": "bg_urchin",
+    "slug": "urchin",
+    "name": "Urchin",
+    "description": "Sobreviveu nas ruas com astúcia e furtividade.",
+    "feature": "City Secrets",
+    "skillProficiencies": ["sleight-of-hand", "stealth"],
+    "toolProficiencies": ["disguise kit", "thieves' tools"],
+    "languagesGranted": 0,
+    "equipmentGranted": ["small knife", "city map", "pet mouse", "token from parents", "common clothes", "pouch (10 gp)"]
+  }
+]

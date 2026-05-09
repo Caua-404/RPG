@@ -1,0 +1,50 @@
+# v0 runtime files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+
+# Common ignores
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+!.env*.example
+.DS_Store
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts and caches
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Common secret/cert files
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.mobileprovision
+*.jks
+*.keystore
+*.kdbx
+*.ovpn
+
+# Local config files that may contain credentials
+.npmrc
+.yarnrc
+.pnpmrc
+
+# SQLite/Local DB leftovers
+*.db
+*.sqlite
+*.sqlite3

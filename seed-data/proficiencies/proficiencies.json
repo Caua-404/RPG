@@ -1,0 +1,22 @@
+[
+  { "id": "prof_light_armor", "slug": "light-armor", "type": "armor", "name": "Light Armor", "description": "Proficiência com armaduras leves." },
+  { "id": "prof_medium_armor", "slug": "medium-armor", "type": "armor", "name": "Medium Armor", "description": "Proficiência com armaduras médias." },
+  { "id": "prof_heavy_armor", "slug": "heavy-armor", "type": "armor", "name": "Heavy Armor", "description": "Proficiência com armaduras pesadas." },
+  { "id": "prof_shields", "slug": "shields", "type": "armor", "name": "Shields", "description": "Proficiência com escudos." },
+  { "id": "prof_simple_weapons", "slug": "simple-weapons", "type": "weapon", "name": "Simple Weapons", "description": "Proficiência com armas simples." },
+  { "id": "prof_martial_weapons", "slug": "martial-weapons", "type": "weapon", "name": "Martial Weapons", "description": "Proficiência com armas marciais." },
+  { "id": "prof_thieves_tools", "slug": "thieves-tools", "type": "tool", "name": "Thieves' Tools", "description": "Ferramentas de ladrão." },
+  { "id": "prof_disguise_kit", "slug": "disguise-kit", "type": "tool", "name": "Disguise Kit", "description": "Kit de disfarce." },
+  { "id": "prof_forgery_kit", "slug": "forgery-kit", "type": "tool", "name": "Forgery Kit", "description": "Kit de falsificação." },
+  { "id": "prof_herbalism_kit", "slug": "herbalism-kit", "type": "tool", "name": "Herbalism Kit", "description": "Kit de herbalismo." },
+  { "id": "prof_common", "slug": "comum", "type": "language", "name": "Comum", "description": "Idioma comum." },
+  { "id": "prof_dwarvish", "slug": "anao", "type": "language", "name": "Anão", "description": "Idioma anão." },
+  { "id": "prof_elvish", "slug": "elfico", "type": "language", "name": "Élfico", "description": "Idioma élfico." },
+  { "id": "prof_infernal", "slug": "infernal", "type": "language", "name": "Infernal", "description": "Idioma infernal." },
+  { "id": "prof_save_strength", "slug": "save-strength", "type": "savingThrow", "name": "Strength Saving Throw", "description": "Resistência de Força." },
+  { "id": "prof_save_dexterity", "slug": "save-dexterity", "type": "savingThrow", "name": "Dexterity Saving Throw", "description": "Resistência de Destreza." },
+  { "id": "prof_save_constitution", "slug": "save-constitution", "type": "savingThrow", "name": "Constitution Saving Throw", "description": "Resistência de Constituição." },
+  { "id": "prof_save_intelligence", "slug": "save-intelligence", "type": "savingThrow", "name": "Intelligence Saving Throw", "description": "Resistência de Inteligência." },
+  { "id": "prof_save_wisdom", "slug": "save-wisdom", "type": "savingThrow", "name": "Wisdom Saving Throw", "description": "Resistência de Sabedoria." },
+  { "id": "prof_save_charisma", "slug": "save-charisma", "type": "savingThrow", "name": "Charisma Saving Throw", "description": "Resistência de Carisma." }
+]

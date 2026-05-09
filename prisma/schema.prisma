@@ -1,0 +1,363 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  mestre
+  jogador
+}
+
+enum Gender {
+  masculino
+  feminino
+  nao_binario
+  outro
+}
+
+enum ProficiencyType {
+  weapon
+  armor
+  tool
+  language
+  savingThrow
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  username     String    @unique
+  name         String
+  displayName  String?
+  email        String?   @unique
+  avatarData   Bytes?
+  avatarMimeType String?
+  playerBio    String?
+  playerNotes  String?
+  lastSeenAt   DateTime?
+  failedLoginAttempts Int @default(0)
+  blockedAt    DateTime?
+  passwordHash String?
+  role         UserRole  @default(jogador)
+  createdAt    DateTime  @default(now())
+
+  characters   Character[]
+  mastered     Session[] @relation("SessionMaster")
+  sessionAccess SessionAccess[]
+
+  @@index([role])
+}
+
+model Session {
+  id                Int      @id @default(autoincrement())
+  masterUserId      Int
+  title             String
+  description       String?
+  style             String   @default("outro")
+  startAt           DateTime
+  initialLevel      Int      @default(1)
+  worldRestrictions String?
+  coverImageUrl     String?
+  createdAt         DateTime @default(now())
+
+  master            User     @relation("SessionMaster", fields: [masterUserId], references: [id], onDelete: Cascade)
+  access            SessionAccess[]
+
+  @@index([masterUserId])
+  @@index([startAt])
+}
+
+model SessionAccess {
+  sessionId Int
+  userId    Int
+  createdAt DateTime @default(now())
+
+  session   Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([sessionId, userId])
+  @@index([userId])
+}
+
+model Character {
+  id                     Int      @id @default(autoincrement())
+  userId                 Int
+  name                   String
+  age                    Int?
+  gender                 Gender?
+  alignment              String?
+  level                  Int      @default(1)
+  xp                     Int      @default(0)
+
+  raceId                 Int?
+  subraceId              Int?
+  classId                Int?
+  backgroundId           Int?
+
+  strength               Int      @default(10)
+  dexterity              Int      @default(10)
+  constitution           Int      @default(10)
+  intelligence           Int      @default(10)
+  wisdom                 Int      @default(10)
+  charisma               Int      @default(10)
+
+  strengthModifier       Int      @default(0)
+  dexterityModifier      Int      @default(0)
+  constitutionModifier   Int      @default(0)
+  intelligenceModifier   Int      @default(0)
+  wisdomModifier         Int      @default(0)
+  charismaModifier       Int      @default(0)
+
+  armorClass             Int      @default(10)
+  initiative             Int      @default(0)
+  speed                  Int      @default(30)
+
+  maxHp                  Int      @default(1)
+  currentHp              Int      @default(1)
+  temporaryHp            Int      @default(0)
+  hitDice                String?
+
+  proficiencyBonus       Int      @default(2)
+  inspiration            Boolean  @default(false)
+
+  personalityTraits      String?
+  ideals                 String?
+  bonds                  String?
+  flaws                  String?
+  appearance             String?
+  backstory              String?
+
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  user                   User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  race                   Race?     @relation(fields: [raceId], references: [id], onDelete: SetNull)
+  subrace                Subrace?  @relation(fields: [subraceId], references: [id], onDelete: SetNull)
+  class                  Class?    @relation(fields: [classId], references: [id], onDelete: SetNull)
+  background             Background? @relation(fields: [backgroundId], references: [id], onDelete: SetNull)
+
+  skills                 CharacterSkill[]
+  proficiencies          CharacterProficiency[]
+  items                  CharacterItem[]
+  spells                 CharacterSpell[]
+
+  @@index([userId])
+  @@index([raceId])
+  @@index([classId])
+  @@index([level])
+}
+
+model Race {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique
+  name           String   @unique
+  description    String?
+  speed          Int      @default(30)
+  size           String?  // Pequeno, Médio, etc.
+  ageDescription String?
+  features       Json?
+  languages      Json?
+
+  subraces       Subrace[]
+  bonuses        RaceBonus[]
+  characters     Character[]
+}
+
+model Subrace {
+  id          Int    @id @default(autoincrement())
+  raceId      Int
+  slug        String @unique
+  name        String
+  description String?
+  features    Json?
+
+  race        Race   @relation(fields: [raceId], references: [id], onDelete: Cascade)
+  characters  Character[]
+
+  @@unique([raceId, name])
+  @@index([raceId])
+}
+
+model RaceBonus {
+  id         Int    @id @default(autoincrement())
+  raceId     Int
+  attribute  String // strength, dexterity, etc.
+  bonusValue Int
+
+  race       Race   @relation(fields: [raceId], references: [id], onDelete: Cascade)
+
+  @@index([raceId])
+}
+
+model Class {
+  id             Int    @id @default(autoincrement())
+  slug           String @unique
+  name           String @unique
+  description    String?
+  hitDice        Int    // ex: 8, 10, 12
+  primaryAbility String?
+  savingThrows   String? // CSV/JSON (evolui depois)
+  proficiencies  Json?
+
+  features       ClassFeature[]
+  characters     Character[]
+}
+
+model ClassFeature {
+  id          Int    @id @default(autoincrement())
+  classId     Int
+  slug        String?
+  level       Int
+  name        String
+  description String?
+
+  class       Class  @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@index([classId, level])
+}
+
+model Background {
+  id          Int    @id @default(autoincrement())
+  slug        String @unique
+  name        String @unique
+  description String?
+  feature     String?
+  skillProficiencies Json?
+  toolProficiencies  Json?
+  languagesGranted   Json?
+  equipmentGranted   Json?
+
+  characters  Character[]
+}
+
+model Skill {
+  id               Int    @id @default(autoincrement())
+  slug             String @unique
+  name             String @unique
+  description      String?
+  relatedAttribute String // strength, dexterity, etc.
+
+  characters       CharacterSkill[]
+}
+
+model CharacterSkill {
+  id          Int     @id @default(autoincrement())
+  characterId Int
+  skillId     Int
+  proficient  Boolean @default(false)
+  expertise   Boolean @default(false)
+
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  skill       Skill     @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([characterId, skillId])
+  @@index([skillId])
+}
+
+model Proficiency {
+  id    Int              @id @default(autoincrement())
+  slug  String           @unique
+  type  ProficiencyType
+  name  String
+  description String?
+
+  characters CharacterProficiency[]
+
+  @@unique([type, name])
+}
+
+model CharacterProficiency {
+  id            Int    @id @default(autoincrement())
+  characterId   Int
+  proficiencyId Int
+
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  proficiency   Proficiency @relation(fields: [proficiencyId], references: [id], onDelete: Cascade)
+
+  @@unique([characterId, proficiencyId])
+  @@index([proficiencyId])
+}
+
+model Item {
+  id          Int    @id @default(autoincrement())
+  slug        String @unique
+  name        String @unique
+  type        String
+  category    String?
+  rarity      String?
+  weight      Float?
+  value       Int?
+  description String?
+  damage      String?
+  damageType  String?
+  armorClass  Int?
+  dexterityModifier String?
+  stealthDisadvantage Boolean?
+  properties  String?
+
+  characters  CharacterItem[]
+}
+
+model CharacterItem {
+  id          Int     @id @default(autoincrement())
+  characterId Int
+  itemId      Int
+  quantity    Int     @default(1)
+  equipped    Boolean @default(false)
+
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  item        Item      @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@unique([characterId, itemId])
+  @@index([itemId])
+}
+
+model Spell {
+  id          Int    @id @default(autoincrement())
+  slug        String @unique
+  name        String @unique
+  level       Int
+  school      String
+  castingTime String?
+  range       String?
+  duration    String?
+  components  String?
+  description String?
+  damage      String?
+  damageType  String?
+  concentration Boolean @default(false)
+  ritual      Boolean @default(false)
+  savingThrow String?
+
+  characters  CharacterSpell[]
+
+  @@index([level])
+}
+
+model CharacterSpell {
+  id          Int     @id @default(autoincrement())
+  characterId Int
+  spellId     Int
+  prepared    Boolean @default(false)
+
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  spell       Spell     @relation(fields: [spellId], references: [id], onDelete: Cascade)
+
+  @@unique([characterId, spellId])
+  @@index([spellId])
+}
+
+model Feature {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String?
+  sourceType  String // race, class, item, background, etc.
+  sourceId    String
+
+  @@index([sourceType, sourceId])
+}
+

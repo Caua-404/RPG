@@ -1,0 +1,142 @@
+[
+  {
+    "id": "race_dwarf",
+    "slug": "anao",
+    "name": "Anão",
+    "description": "Raça resistente, especializada em combate, mineração e resistência física.",
+    "speed": 25,
+    "size": "Médio",
+    "ageDescription": "Anões amadurecem na mesma taxa que humanos, mas vivem muito mais.",
+    "languages": ["comum", "anao"],
+    "features": [
+      "darkvision",
+      "dwarvenResilience",
+      "dwarvenCombatTraining",
+      "toolProficiency",
+      "stonecunning"
+    ],
+    "bonuses": [{ "attribute": "constitution", "bonusValue": 2 }]
+  },
+  {
+    "id": "race_elf",
+    "slug": "elfo",
+    "name": "Elfo",
+    "description": "Ágeis e ligados à magia, com sentidos aguçados e longa longevidade.",
+    "speed": 30,
+    "size": "Médio",
+    "ageDescription": "Elfos amadurecem fisicamente como humanos, mas são culturalmente adultos por volta dos 100 anos.",
+    "languages": ["comum", "elfico"],
+    "features": ["darkvision", "keenSenses", "feyAncestry", "trance"],
+    "bonuses": [{ "attribute": "dexterity", "bonusValue": 2 }]
+  },
+  {
+    "id": "race_halfling",
+    "slug": "halfling",
+    "name": "Halfling",
+    "description": "Pequenos, sortudos e surpreendentemente destemidos.",
+    "speed": 25,
+    "size": "Pequeno",
+    "ageDescription": "Halflings atingem a vida adulta por volta dos 20 anos e costumam viver até metade do segundo século.",
+    "languages": ["comum", "halfling"],
+    "features": ["lucky", "brave", "halflingNimbleness"],
+    "bonuses": [{ "attribute": "dexterity", "bonusValue": 2 }]
+  },
+  {
+    "id": "race_human",
+    "slug": "humano",
+    "name": "Humano",
+    "description": "Versáteis e ambiciosos, com grande adaptação a qualquer estilo.",
+    "speed": 30,
+    "size": "Médio",
+    "ageDescription": "Humanos atingem a vida adulta no final da adolescência e vivem menos de um século.",
+    "languages": ["comum", "extra"],
+    "features": ["versatile"],
+    "bonuses": [
+      { "attribute": "strength", "bonusValue": 1 },
+      { "attribute": "dexterity", "bonusValue": 1 },
+      { "attribute": "constitution", "bonusValue": 1 },
+      { "attribute": "intelligence", "bonusValue": 1 },
+      { "attribute": "wisdom", "bonusValue": 1 },
+      { "attribute": "charisma", "bonusValue": 1 }
+    ]
+  },
+  {
+    "id": "race_dragonborn",
+    "slug": "draconato",
+    "name": "Draconato",
+    "description": "Guerreiros orgulhosos com legado dracônico.",
+    "speed": 30,
+    "size": "Médio",
+    "ageDescription": "Draconatos crescem rápido e vivem em média 80 anos.",
+    "languages": ["comum", "draconico"],
+    "features": [
+      "draconicAncestry",
+      "breathWeapon",
+      "damageResistance",
+      {
+        "draconicTypes": ["black", "blue", "brass", "bronze", "copper", "gold", "green", "red", "silver", "white"]
+      }
+    ],
+    "bonuses": [
+      { "attribute": "strength", "bonusValue": 2 },
+      { "attribute": "charisma", "bonusValue": 1 }
+    ]
+  },
+  {
+    "id": "race_gnome",
+    "slug": "gnomo",
+    "name": "Gnomo",
+    "description": "Inventivos, curiosos e naturalmente conectados com truques mentais.",
+    "speed": 25,
+    "size": "Pequeno",
+    "ageDescription": "Gnomos amadurecem por volta dos 40 anos e podem viver entre 350 e 500 anos.",
+    "languages": ["comum", "gnomico"],
+    "features": ["darkvision", "gnomeCunning"],
+    "bonuses": [{ "attribute": "intelligence", "bonusValue": 2 }]
+  },
+  {
+    "id": "race_half_elf",
+    "slug": "meio-elfo",
+    "name": "Meio-Elfo",
+    "description": "Carismáticos e adaptáveis, transitam entre mundos humano e élfico.",
+    "speed": 30,
+    "size": "Médio",
+    "ageDescription": "Meio-elfos amadurecem como humanos e vivem muito mais tempo.",
+    "languages": ["comum", "elfico", "extra"],
+    "features": ["darkvision", "feyAncestry", "skillVersatility"],
+    "bonuses": [
+      { "attribute": "charisma", "bonusValue": 2 },
+      { "attribute": "choice", "bonusValue": 1, "count": 2 }
+    ]
+  },
+  {
+    "id": "race_half_orc",
+    "slug": "meio-orc",
+    "name": "Meio-Orc",
+    "description": "Fortes e ferozes, combinam resistência e agressividade.",
+    "speed": 30,
+    "size": "Médio",
+    "ageDescription": "Meio-orcs amadurecem cedo e raramente vivem mais de 75 anos.",
+    "languages": ["comum", "orc"],
+    "features": ["darkvision", "relentlessEndurance", "savageAttacks"],
+    "bonuses": [
+      { "attribute": "strength", "bonusValue": 2 },
+      { "attribute": "constitution", "bonusValue": 1 }
+    ]
+  },
+  {
+    "id": "race_tiefling",
+    "slug": "tiefling",
+    "name": "Tiefling",
+    "description": "Herança infernal, resistência ao fogo e magia inata.",
+    "speed": 30,
+    "size": "Médio",
+    "ageDescription": "Tieflings amadurecem na mesma taxa que humanos e vivem alguns anos a mais.",
+    "languages": ["comum", "infernal"],
+    "features": ["darkvision", "hellishResistance", "infernalLegacy"],
+    "bonuses": [
+      { "attribute": "charisma", "bonusValue": 2 },
+      { "attribute": "intelligence", "bonusValue": 1 }
+    ]
+  }
+]
