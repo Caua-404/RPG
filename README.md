@@ -45,6 +45,8 @@ npx prisma db push
 npx prisma generate
 ```
 
+Note: Supabase Postgres requires SSL. Make sure your connection strings include `?sslmode=require`.
+
 ### 3) Vercel
 
 - Connect this repository in Vercel
